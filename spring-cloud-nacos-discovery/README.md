@@ -1,4 +1,4 @@
-Nacos实现了动态服务发现和管理（Spring Cloud Eureka的功能）、服务配置管理（Spring Cloud Config）的功能，并且提供了web界面操作，这使管理微服务应用变得更简单，同时官方说Nacos是经受了双十一的考验，本文通过 Nacos Server 和 spring-cloud-starter-alibaba-nacos-discovery 演示如何在Spring Cloud项目中启用 Nacos 的服务的注册与发现功能，如下图示:
+​	Nacos实现了动态服务发现和管理（Spring Cloud Eureka的功能）、服务配置管理（Spring Cloud Config）的功能，并且提供了web界面操作，这使管理微服务应用变得更简单，同时官方说Nacos是经受了双十一的考验，本文通过 Nacos Server 和 spring-cloud-starter-alibaba-nacos-discovery 演示如何在Spring Cloud项目中启用 Nacos 的服务的注册与发现功能，如下图示:
 
 ![微服务架构](../spring-cloud-doc/docs/assets/imgs/spring-cloud-nacos-discovery/Nacos-Discovery.png)
 
@@ -7,11 +7,28 @@ Nacos实现了动态服务发现和管理（Spring Cloud Eureka的功能）、�
 ## 一、安装并启动Nacos
 下载并启动Nacos Server
 
-[自测安装文档](http://note.youdao.com/noteshare?id=f6e91094a9bb2438fc4ef9ebaa303c50&sub=200FA8E39741467BA51CF8639828E10A)
-
 [官方安装文档](https://nacos.io/en-us/docs/quick-start.html)
 
+[单节点安装文档](http://note.youdao.com/noteshare?id=f6e91094a9bb2438fc4ef9ebaa303c50&sub=200FA8E39741467BA51CF8639828E10A)
+
+[集群安装文档](http://note.youdao.com/noteshare?id=9d997f46b1f5e2ad433636f09394ed96&sub=BA6FC6D7612945F8A8823042177B6E51)
+
+
+
+本文使用Nacos集群做测试，使用本地模式和集群模式唯一的区别是：
+
+```properties
+#单节点
+spring.cloud.nacos.discovery.server-addr=myj01:8848
+
+#集群模式
+spring.cloud.nacos.discovery.server-addr=myj01:8848,myj02:8848,myj03:8848
+```
+
+
+
 ## 二、创建服务提供者工程
+
 创建服务提供者工程（工程名：nacos-discovery-provider，开启两个实例：端口分别为8062、8063）
 
 项目结构如下图

@@ -6,8 +6,9 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.4.RELEASE</version><!-- 测试发现只有在该版本中自动刷新有效 -->
+        <!--<version>2.0.4.RELEASE</version>--><!-- 测试发现只有在该版本中自动刷新有效 -->
         <!--<version>2.1.2.RELEASE</version>-->
+        <version>2.1.0.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -24,20 +25,48 @@
         <spring-cloud-commons.version>2.1.0.RELEASE</spring-cloud-commons.version>
         <spring-cloud-netflix.version>2.0.3.RELEASE</spring-cloud-netflix.version>
         <spring-cloud-openfeign.version>2.0.3.RELEASE</spring-cloud-openfeign.version>
-
         <junit.version>4.12</junit.version>
+
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+
+        <!--org.springframework.cloud  组下的  spring-cloud-alibaba-dependencies  版本-->
+        <spring-cloud-alibaba-dependencies.version>0.2.1.RELEASE</spring-cloud-alibaba-dependencies.version>
+
+        <!--com.alibaba.cloud  组下的  spring-cloud-alibaba-dependencies  版本-->
+        <alibaba-cloud-spring-cloud-alibaba-dependencies.version>2.1.0.RELEASE
+        </alibaba-cloud-spring-cloud-alibaba-dependencies.version>
+
 
     </properties>
 
     <dependencyManagement>
+
         <dependencies>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>0.2.1.RELEASE</version>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--<dependency>
+                 <groupId>com.alibaba.cloud</groupId>
+                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                 <version>${alibaba-cloud-spring-cloud-alibaba-dependencies.version}</version>
+                 <type>pom</type>
+                 <scope>import</scope>
+             </dependency>-->
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
