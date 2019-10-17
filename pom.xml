@@ -17,9 +17,10 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
-        <module>spring-cloud-alibaba-nacos-config</module>
-        <module>spring-cloud-nacos-discovery-consumer</module>
-        <module>spring-cloud-nacos-discovery-provider</module>
+        <module>spring-cloud-doc</module>
+        <module>spring-cloud-dubbo-nacos</module>
+        <module>spring-cloud-nacos-config</module>
+        <module>spring-cloud-nacos-discovery</module>
         <module>spring-cloud-sentinel</module>
         <module>spring-cloud-dubbo-api</module>
     </modules>
